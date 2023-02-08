@@ -1,0 +1,8 @@
+#忽略webapp中的文件
+node_modules
+build/
+dist/
+out/
+*.log*
+
+*.zip
