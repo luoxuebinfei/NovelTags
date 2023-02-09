@@ -15,7 +15,7 @@ export const login = (data) => {
   })
 }
 
-export const test = () => {
+export const GetData = () => {
   return serviceAxios({
     url: '/',
     method: 'get'
