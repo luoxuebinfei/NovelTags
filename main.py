@@ -3,6 +3,8 @@ from typing import Union
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
+from src.bin.LoadBookFile import Book
+
 app = FastAPI()
 
 # 设置允许访问的域名
@@ -19,7 +21,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return "你好啊"
+    return Book().read_file()
 
 
 @app.get("/items/{item_id}")
