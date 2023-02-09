@@ -3,7 +3,7 @@
     <el-table-v2
       :columns="columns"
       :data="data"
-      :width="700"
+      :width="1200"
       :height="400"
       fixed
     />
@@ -25,6 +25,9 @@ import { Timer } from '@element-plus/icons-vue'
 import type { Column } from 'element-plus'
 import * as stream from "stream";
 
+import {test} from "../http/api/user"
+// console.log(test())
+test().then((res)=>{console.log(res)})
 
 const dummyData = `[{
   "bookName":{"text":"大奉打更人","url":"https://book.qidian.com/info/1019664125/?source=m_jump","img":"https://bookcover.yuewen.com/qdbimg/349573/1019664125/180"},
@@ -117,7 +120,7 @@ const columns: Column<any>[] = [
       "div",
       {},
       tags.map((tag)=>{
-        return h(ElTag,{class:"mx-1","closable":true,"round":true},{default:()=>tag})
+        return h(ElTag,{class:"mx-1","closable":true,"round":true,onClose:()=>{}},{default:()=>tag})
       }),
     ),
   },
@@ -139,7 +142,7 @@ const columns: Column<any>[] = [
 
 // const data = ref(Array.from({ length: 20000 }).map(dataGenerator))
 const data = ref(Array.from(dummyData_))
-console.log(data);
+// console.log(data);
 </script>
 
 <style>
